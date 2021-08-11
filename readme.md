@@ -1,1 +1,1 @@
-hello there!!
+YouTube Transcript summarizer is a software which summarizes the YouTube video in one go.
