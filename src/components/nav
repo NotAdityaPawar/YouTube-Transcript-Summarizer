@@ -1,0 +1,94 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+// import yts from './assets/images/yts.PNG';
+
+export default function Navbar(props) {
+    const imgstyle = {
+        height: '50px',
+        width: '50px',
+        padding: '0px !important',
+        margin: '0px !important'
+    }
+    return (
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+            <div className="container-fluid">
+                <a className="navbar-brand" href="/"><img style={imgstyle} src={props.title} alt="" /></a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                {/* <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">{props.aboutText}</a>
+                        </li>
+                    </ul> */}
+                {/* <form className="d-flex">
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button cla
+                        ssName="btn btn-primary" type="submit">Search</button>
+                    </form> */}
+
+                {/* </div> */}
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Help Desk
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink-3">
+                            <a class="dropdown-item" href="#">Video Tutorial</a>
+                            <a class="dropdown-item" href="#">Documentation</a>
+                            <a class="dropdown-item" href="#">External</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About">Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div className={`form-check toggle-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+                <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
+
+            </div>
+        </div>
+
+        
+        </nav >
+    )
+}
+
+Navbar.propTypes = {
+    title: PropTypes.string.isRequired,
+    aboutText: PropTypes.string.isRequired
+}
+
+Navbar.defaultProps = {
+    title: 'Set title here',
+    aboutText: 'About'
+};
